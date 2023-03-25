@@ -1,0 +1,31 @@
+@import "../../app/mixins";
+
+.ProductList {
+  @include adaptive-size(90, 40, padding-top);
+  @include adaptive-size(90, 40, padding-bottom);
+
+  &__grid {
+    @include adaptive-size(90, 40, margin-bottom);
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 450px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__pagination {
+    margin: 0 auto;
+  }
+}

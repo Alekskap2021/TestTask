@@ -1,0 +1,68 @@
+@import "../../app/mixins";
+
+.Button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: transparent;
+  border: none;
+  border-radius: 15px;
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+// Display
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline {
+  display: inline;
+}
+
+// Colors
+.Default {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+
+.Danger {
+  color: var(--color-white);
+  background-color: var(--color-danger);
+}
+
+.Success {
+  padding: 0;
+  color: var(--color-success);
+}
+//
+
+// Sizes
+.m {
+  @include adaptive-size(14, 12, font-size);
+  padding: 10px 20px;
+}
+
+.l {
+  @include adaptive-size(16, 14, font-size);
+  padding: 20px 40px;
+}
+//
+
+.clear {
+  color: var(--color-main);
+  background-color: transparent;
+  padding: 0;
+}
+
+.disable {
+  opacity: 0.2;
+  pointer-events: none;
+}

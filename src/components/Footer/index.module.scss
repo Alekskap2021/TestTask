@@ -1,0 +1,66 @@
+@import "../../app/mixins";
+
+.Footer {
+  @include adaptive-size(90, 40, padding-top);
+  @include adaptive-size(90, 40, padding-bottom);
+
+  background-color: var(--color-main);
+
+  & * {
+    color: var(--color-white-05);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__logoImg {
+    @include adaptive-size(36, 18, font-size);
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  &__logoDescr {
+    @include adaptive-size(16, 12, font-size);
+    max-width: 400px;
+  }
+
+  &__contacts {
+    @include adaptive-size(16, 12, font-size);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    &__contacts {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__wrapper {
+      flex-direction: column-reverse;
+      gap: 50px;
+    }
+
+    &__logo {
+      text-align: center;
+    }
+  }
+  @media (max-width: 450px) {
+    &__contacts {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}

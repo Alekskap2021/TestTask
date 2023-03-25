@@ -1,0 +1,64 @@
+@import "../../app/mixins";
+
+.ProductCard {
+  background: #ffffff;
+  border: 2px solid rgba(3, 7, 17, 0.1);
+  border-radius: 25px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+
+  &__img {
+    @include adaptive-size(15, 5, margin-bottom);
+    object-fit: cover;
+    border-radius: 25px;
+    width: 100%;
+  }
+
+  &__title {
+    @include adaptive-size(16, 12, font-size);
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  &__brand {
+    @include adaptive-size(14, 10, font-size);
+    color: var(--color-main-05);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__more {
+    @include adaptive-size(14, 12, font-size);
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0;
+  }
+
+  &__bage {
+    @include adaptive-size(14, 10, font-size);
+    background-color: var(--color-danger);
+    color: var(--color-white);
+
+    padding: 5px 15px;
+    border-radius: 10px;
+
+    text-transform: uppercase;
+    transform: rotate(10deg);
+
+    position: absolute;
+    top: 1%;
+    right: 0;
+  }
+}
