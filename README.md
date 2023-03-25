@@ -1,42 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# О проекте
 
-## Getting Started
+Пагинация списка товаров на Next js.
 
-First, run the development server:
+## Техническое задание
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Список товаров должен выглядеть в виде сетки
+2. Каждый товар имеет:
+   - Фоновую картинку товара
+   - Название товара
+   - Название бренда товара
+   - Badge (пример) с текстом “new” или “top”
+3. Отобразить пагинацию с двумя кнопками (вперед и назад) и инпутом с текущей страницей и добавить функционал перелистывания
+4. Разбить все на чистые компоненты и композиции компонентов, так чтобы можно было переиспользовать их в разных местах проекта
+5. Использовать локальные стили компонентов (пример: button.module.css)
+6. Компонент кнопки должен иметь функционал отображения в разных стилях (например в библиотеке Bootstrap):
+   - минимум 3 цвета - Default, Success и Danger
+   - кнопка может быть как кнопкой так и ссылкой в виде кнопки
+   - может быть по размеру стандартной или большой
+   - может быть блочной занимающей все пространство по горизонтали или строчной
+   - отображение определенного стиля кнопки контролируется его родителем с помощью передачи props
+7. Реализовать в фреймворке Next.js
+8. Адаптивность Mobile-first.
+9. Не использовать сторонние библиотеки/фреймворки кроме react.js, next.js, clsx и расширений css.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Слабые места проекта
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### _Отсутствие динамической пагинации_
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+##### Как можно решить?
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    - В новой версии Next нельзя использовать хуки React внутри серверных компонентов.
+    Самое простое решение, что я смог найти по 13ой версии - использование различных стейт менеджеров, что
+    противоречит ТЗ
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+##### Почему я этого не сделал?
 
-## Learn More
+    - В ТЗ указана пагинация, но не указано, что она должна быть динамической
 
-To learn more about Next.js, take a look at the following resources:
+## При разработке испольовались
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-Требования:
-
-Разбить все на чистые компоненты и композиции компонентов, так чтобы можно было переиспользовать их в разных местах проекта
+- [NextJs](https://beta.nextjs.org/docs/getting-started)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [ClassNames](https://www.npmjs.com/package/classnames)
+- [Sass](https://www.npmjs.com/package/sass)
