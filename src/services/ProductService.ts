@@ -1,5 +1,5 @@
 import { ProductI } from "@/types";
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = "https://jsonplaceholder.typicode.com";
 
 export const getAllProducts = async (): Promise<ProductI[]> => {
   //   const response = await fetch(`${baseUrl}/posts?_limit=32`);
